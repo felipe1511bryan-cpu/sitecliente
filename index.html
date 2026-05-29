@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboBot - Painel Multi-Cliente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .neon-border:focus { border-color: #06b6d4; box-shadow: 0 0 10px rgba(6, 182, 212, 0.5); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-cyan-500 text-slate-950 p-2 rounded-xl shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-bolt text-xl font-black"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white">TURBO<span class="text-cyan-400">BOT</span></h1>
+                    <p class="text-xs text-slate-400 font-medium tracking-wide">PAINEL DE GERENCIAMENTO COMERCIAL</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-800/60 px-4 py-1.5 rounded-full border border-slate-700/50">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-semibold text-emerald-400 tracking-wider">MOTOR ONLINE</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <section class="lg:col-span-2 space-y-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center gap-2 mb-6 border-b border-slate-800 pb-4">
+                    <i class="fa-solid fa-user-plus text-cyan-400 text-lg"></i>
+                    <h2 class="text-lg font-bold text-white">Configurar Novo Cliente</h2>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Nome do Cliente</label>
+                            <input type="text" placeholder="Ex: Maria Silva" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none neon-border transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Escolha o Grupo do Telegram</label>
+                            <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none neon-border transition appearance-none cursor-pointer">
+                                <option value="" disabled selected>Selecione um grupo disponível...</option>
+                                <option value="-100158942">Grupo Senha. (ID: -100158942)</option>
+                                <option value="-100984124">Sinais VIP (ID: -100984124)</option>
+                                <option value="-100348291">Grupo de Testes (ID: -100348291)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Hora Início</label>
+                                <input type="time" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none neon-border transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Hora Fim</label>
+                                <input type="time" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none neon-border transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Dias Ativos</label>
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <label class="cursor-pointer bg-slate-950 border border-slate-800 hover:border-cyan-500 rounded-lg px-3 py-2 text-xs font-medium flex items-center gap-1.5"><input type="checkbox" class="accent-cyan-500"> Seg</label>
+                                <label class="cursor-pointer bg-slate-950 border border-slate-800 hover:border-cyan-500 rounded-lg px-3 py-2 text-xs font-medium flex items-center gap-1.5"><input type="checkbox" class="accent-cyan-500"> Ter</label>
+                                <label class="cursor-pointer bg-slate-950 border border-slate-800 hover:border-cyan-500 rounded-lg px-3 py-2 text-xs font-medium flex items-center gap-1.5"><input type="checkbox" class="accent-cyan-500"> Qua</label>
+                                <label class="cursor-pointer bg-slate-950 border border-slate-800 hover:border-cyan-500 rounded-lg px-3 py-2 text-xs font-medium flex items-center gap-1.5"><input type="checkbox" class="accent-cyan-500"> Qui</label>
+                                <label class="cursor-pointer bg-slate-950 border border-slate-800 hover:border-cyan-500 rounded-lg px-3 py-2 text-xs font-medium flex items-center gap-1.5"><input type="checkbox" class="accent-cyan-500"> Sex</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Mensagem de Disparo Único</label>
+                        <textarea rows="3" placeholder="Digite aqui o texto ou comando da senha que o bot vai injetar no chat..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none neon-border transition resize-none"></textarea>
+                    </div>
+
+                    <div class="flex gap-3 justify-end pt-2">
+                        <button type="button" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-5 py-3 rounded-xl text-sm transition flex items-center gap-2">
+                            <i class="fa-brands fa-telegram text-cyan-400"></i> Autenticar Conta Telegram
+                        </button>
+                        <button type="submit" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm shadow-lg shadow-cyan-500/10 transition">
+                            Salvar & Ativar Robô
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-users text-cyan-400 text-lg"></i>
+                        <h2 class="text-lg font-bold text-white">Clientes Ativos</h2>
+                    </div>
+                    <span class="bg-slate-800 text-xs text-slate-400 font-bold px-2.5 py-1 rounded-md">2</span>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 relative overflow-hidden group hover:border-slate-700 transition">
+                        <div class="absolute top-0 right-0 h-1 w-24 bg-gradient-to-l from-cyan-500 to-transparent"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-sm text-white">Maria Silva</h3>
+                                <p class="text-[11px] text-slate-500">Grupo Senha.</p>
+                            </div>
+                            <span class="bg-cyan-500/10 text-cyan-400 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded tracking-wider">Aguardando Janela</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-400 bg-slate-900/60 p-2 rounded-lg mt-3">
+                            <div><i class="fa-regular fa-clock text-cyan-400/80 mr-1"></i> 14:00 ➔ 14:15</div>
+                            <div class="text-right text-[11px] font-medium text-slate-500">Seg, Ter, Qua</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 relative overflow-hidden group hover:border-slate-700 transition">
+                        <div class="absolute top-0 right-0 h-1 w-24 bg-gradient-to-l from-emerald-500 to-transparent"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-sm text-white">Pedro Santos</h3>
+                                <p class="text-[11px] text-slate-500">Sinais VIP</p>
+                            </div>
+                            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded tracking-wider animate-pulse">Monitorando</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-400 bg-slate-900/60 p-2 rounded-lg mt-3">
+                            <div><i class="fa-regular fa-clock text-emerald-400/80 mr-1"></i> 20:00 ➔ 20:30</div>
+                            <div class="text-right text-[11px] font-medium text-slate-400">Hoje (Sex)</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
